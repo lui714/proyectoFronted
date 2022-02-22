@@ -1,0 +1,35 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+.card{
+    border-radius: 10px;
+    border-color: black;
+    height: 100%;
+}
+.imagen{
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5%;
+}
+.principal{
+    padding: 1%;
+    width: 30%;
+}
+.hola{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+.titulo{
+    text-align: center;
+    color: white;
+    padding: 0.5%;
+    width: 90%;
+    height: 100%;
+}
+a{
+    padding: 1%;
+}
+.adios{
+    margin-bottom: 3%;
+}
