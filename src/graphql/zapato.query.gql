@@ -7,6 +7,7 @@ query zapatoList {
     longDescription
     thumbnailUrl
     precio
+    status
     tallas
   }
 }
