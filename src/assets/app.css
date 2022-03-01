@@ -5,6 +5,19 @@
     border: 3px solid;
     height: 100%;
 }
+.botonLateral{
+    margin: 1%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 20%;
+}
+.separacion{
+    margin-left: 1%;
+}
+.boton{
+    margin-top: 1%;
+}
 .card-body {
     display: flex;
     flex-direction: column;
@@ -45,9 +58,120 @@ a.btn-primary{
     display: flex;
     flex-direction: column;
 }
+.insert{
+    width: 100%;
+    height: 35.1rem;
+}
+.formulario{
+    margin-left: 35%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    width: 30%;
+    height: 100%;
+}
+
+#imagen{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%;
+}
+.textoDetalles{
+    padding-top: 1%;
+    width: 50%;
+    height: 100%;
+}
+.cuerpo{
+    display: flex;
+    height: 100%;
+}
+/*.logo{
+    height: 80%;
+    width: 80%;
+}*/
+.textoDetalles{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.home{
+    height: 100%;
+    width: 100%;
+}
+.uno{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.dos{
+    height: 100%;
+    width: 40%;
+    background-image: url('../assets/zapatoLogo.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .bienvenida {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    padding-top: 17rem;
+    align-items: center;
+    height: 89.4%;
+    width: 100%;
+}
+.cabecera {
+    height: 10.6%;
+    width: 100%;
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+.centrar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.tabla{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+tr{
+    width: 20%;
+    margin: 1%;
+}
+.id{
+    width: 2%;
+}
+td{
+    width: 10%;
+}
+.tres{
+    width: 10%;
+    height: 2%;
+}
+.botones{
+    width: 8%;
+}
+.mod{
+    margin: 1%;
 }

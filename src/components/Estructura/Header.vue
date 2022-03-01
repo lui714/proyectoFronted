@@ -5,8 +5,8 @@
             <router-link to="/Zapatos">
                 <a href="#" class="text-white h5">LISTAR</a>
             </router-link>
-            <router-link to="/Insertar">
-                <a href="#" class="text-white h5">INSERTAR</a>
+            <router-link to="/Modificacion">
+                <a href="#" class="text-white h5">MODIFICACION</a>
             </router-link>
         </nav>
     </div>

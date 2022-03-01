@@ -5,7 +5,9 @@
     </div>
     <div class="bienvenida">
       <div class="uno">
-        <h1>BIENVENIDO A LA ZAPATERIA DE LUIS Y SERGIO</h1>
+          <h1>BIENVENIDO A LA ZAPATERIA DE LUIS Y SERGIO</h1>
+      </div>
+      <div class="dos">
       </div>
     </div>  
   </div>
