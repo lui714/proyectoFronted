@@ -1,0 +1,6 @@
+mutation DeleteZapato($deleteZapatoId: ID!) {
+  deleteZapato(id: $deleteZapatoId) {
+    status
+    message
+  }
+}

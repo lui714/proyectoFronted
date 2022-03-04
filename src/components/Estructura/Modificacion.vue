@@ -17,14 +17,20 @@
                     <td>{{ zapato.modelo }}</td>
                 </tr>
                 <div class="botones">
-                    <button class="mod btn btn-danger">
-                        <span class="material-icons-round">delete</span>
-                    </button>
-                    <router-link to='/Update'> 
-                        <button class="mod btn btn-success">
-                            <span class="material-icons-round">edit</span>
-                        </button>
-                    </router-link>
+                    <div>
+                        <router-link :to="{ params: { id: zapato.id } }">
+                            <button class="mod btn btn-danger">
+                                <span class="material-icons-round">delete</span>
+                            </button>
+                        </router-link>
+                    </div>
+                    <div>
+                        <router-link to='/Update'> 
+                            <button class="mod btn btn-success">
+                                <span class="material-icons-round">edit</span>
+                            </button>
+                        </router-link>
+                    </div>
                 </div>
             </table>
         </div>
@@ -35,9 +41,11 @@
 // @ is an alias to /src
 import Modificacion from "@/components/Estructura/Modificacion";
 import Header from "@/components/Estructura/Header";
-import { useQuery, useResult } from "@vue/apollo-composable";
+import { useMutation, useQuery, useResult } from "@vue/apollo-composable";
 import { ref } from "vue";
 import zapatoListQuery from "../../graphql/zapato.query.gql";
+import DeleteZapato from "../../graphql/delete.mutation.gql";
+import gql from "graphql-tag";
 
 export default {
   name: "Modificacion",
@@ -54,5 +62,32 @@ export default {
 
     return { message, zapatoList };
   },
-};
+  props: ["id"],
+
+    setup(props) {
+        const { result } = useMutation(
+        gql`
+            mutation ($deleteZapatoId: ID!) {
+                deleteZapato(id: $deleteZapatoId) {
+                    status
+                    message
+                }
+            }
+        `,
+        () => ({
+            id: props.id,
+        })
+        );
+        console.log(result);
+    },
+    setup(){
+        const message = ref("hola sergio");
+        const { result } = useQuery(zapatoListQuery);
+
+        // console.log(result)
+        const zapatoList = useResult(result, null, (data) => data.zapatoList);
+
+        return { message, zapatoList };
+    }
+}
 </script>

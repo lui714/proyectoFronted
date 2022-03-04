@@ -170,6 +170,8 @@ td{
     height: 2%;
 }
 .botones{
+    display: flex;
+    justify-content:space-around;
     width: 8%;
 }
 .mod{
