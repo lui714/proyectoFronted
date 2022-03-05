@@ -1,4 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap.css';
+.login{
+    height: 38.6rem;
+}
+.volver{
+    margin: 1%;
+}
 .card{
     border-radius: 10px;
     border-color: black;

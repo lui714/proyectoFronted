@@ -53,15 +53,6 @@ export default {
     Header,
     Modificacion,
   },
-  setup() {
-    const message = ref("hola sergio");
-    const { result } = useQuery(zapatoListQuery);
-
-    // console.log(result)
-    const zapatoList = useResult(result, null, (data) => data.zapatoList);
-
-    return { message, zapatoList };
-  },
   props: ["id"],
 
     setup(props) {

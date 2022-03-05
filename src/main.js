@@ -14,7 +14,6 @@ const defaultClient = new ApolloClient({
   })
   
   createApp(
-  
     {
     setup (){
         provide( DefaultApolloClient, defaultClient)
@@ -23,6 +22,4 @@ const defaultClient = new ApolloClient({
             return h(App)
           }
     }
-  
-  
   ).use(router).mount('#app')

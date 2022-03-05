@@ -1,7 +1,10 @@
 <template>
     <div class="morgado">
         <Header />
-        <div class="cuerpo">
+        <router-link to="/Zapatos">
+          <button class="btn btn-success volver">Volver</button>
+        </router-link>
+        <div class="cuerpo" v-if="result">
             <div id="imagen">
                 <img :src="result.zapatoId.data.thumbnailUrl" class="logo" width="500" height="500">
             </div>
