@@ -1,11 +1,24 @@
 <template>
-  <div class="algo">
-    <div class="luis">
-        <Header />
-    </div>
-        <button class="mod btn btn-primary">
-            <span class="material-icons-round">add_circle_outline</span>
-        </button>
+    <div class="algo">
+        <div class="luis">
+            <Header />
+        </div>
+            <div class="addSalir">
+                <div class="add">
+                    <router-link to="/Add">
+                        <button id="add" class="mod btn btn-primary">
+                            <span class="material-icons-round">add_circle_outline</span>
+                        </button>
+                    </router-link>
+                </div>
+                <div class="salir">
+                    <router-link to="/Zapatos">
+                        <button id="close" class="mod btn btn-danger">
+                            Cerrar sesion
+                        </button>
+                    </router-link>
+                </div>
+            </div>
         <div class="centrar">
             <table class="tabla" v-for="zapato in zapatoList" :key="zapato.id">
                 <tr class="id">
@@ -34,7 +47,7 @@
                 </div>
             </table>
         </div>
-  </div> 
+    </div>
 </template>
 
 <script>

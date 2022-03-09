@@ -1,0 +1,6 @@
+query marcasList {
+  marcasList {
+    id
+    marca
+  }
+}

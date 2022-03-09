@@ -1,32 +1,32 @@
 <template>
     <div class="morgado">
-        <Header />
-        <router-link to="/Zapatos">
-          <button class="btn btn-success volver">Volver</button>
-        </router-link>
-        <div class="cuerpo" v-if="result">
-            <div id="imagen">
-                <img :src="result.zapatoId.data.thumbnailUrl" class="logo" width="500" height="500">
-            </div>
-            <div class="textoDetalles">
-              <p>{{ result.zapatoId.data.marca }}</p>
-              <p>{{ result.zapatoId.data.modelo }}</p>
-              <p>{{ result.zapatoId.data.precio }}</p>
-              <p>{{ result.zapatoId.data.longDescription}}</p>
-              <p>
-                <a class="btn btn-info" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                  Ver Tallas
-                </a>
-              </p>
-              <div class="collapse" id="collapseExample">
-                <div class="adios">
-                  {{result.zapatoId.data.tallas}}
-                </div>
+      <Header />
+      <router-link to="/Zapatos">
+        <button class="btn btn-success volver">Volver</button>
+      </router-link>
+      <div class="cuerpo">
+          <div id="imagen">
+              <img :src="result.zapatoId.data.thumbnailUrl" class="logo" width="500" height="500">
+          </div>
+          <div class="textoDetalles">
+            <p>{{ result.zapatoId.data.marca }}</p>
+            <p>{{ result.zapatoId.data.modelo }}</p>
+            <p>{{ result.zapatoId.data.precio }}</p>
+            <p>{{ result.zapatoId.data.longDescription}}</p>
+            <p>
+              <a class="btn btn-info" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" 
+              aria-controls="collapseExample">
+                Ver Tallas
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="adios">
+                {{result.zapatoId.data.tallas}}
               </div>
             </div>
-        </div>
-    </div>
-
+          </div>
+      </div>
+  </div>
 </template>
 
 <script>

@@ -5,13 +5,20 @@ import Modificacion from '../components/Estructura/Modificacion.vue'
 import Detalles from '../components/Estructura/Detalles.vue'
 import Update from '../components/Estructura/Update.vue'
 import Login from '../components/Estructura/Login.vue'
+import Add from '../components/Estructura/Add.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
-  },  {
+  },
+  {
+    path: '/Add',
+    name: 'Add',
+    component: Add
+  },  
+  {
     path: '/Login',
     name: 'Login',
     component: Login

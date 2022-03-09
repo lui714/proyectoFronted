@@ -1,4 +1,50 @@
 @import '~bootstrap/dist/css/bootstrap.css';
+.addSalir{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add{
+    width: 10%;
+    padding-left: 1%;
+    display: flex;
+    align-items: center;
+}
+.salir{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#close{
+    width: 100%;
+}
+.form{
+    width: 100%;
+    height: 100%;
+}
+.center{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#inserccion{
+    width: 70%;
+    padding: 1%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid;
+    border-color: black;
+    border-radius: 5px;
+    background-color: orange;
+    margin: 0;
+}
 .login{
     height: 38.6rem;
 }
@@ -177,7 +223,7 @@ td{
 }
 .botones{
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 8%;
 }
 .mod{
