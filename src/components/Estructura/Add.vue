@@ -10,9 +10,9 @@
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom01" class="form-label">Marca</label>
-                    <select class="form-select" v-for="marca in marcasList" :key="marca.id">
+                    <select class="form-select" v-model="zapato.marca" id="marca">
                         <option selected>Selecciona una marca</option>
-                        <option >{{marca.marca}}</option>
+                        <option v-for="marcas in marcasList" :key="marcas.marca">{{marcas.marca}}</option>
                     </select>
                 </div>
                 <div class="col-md-4">
@@ -55,7 +55,7 @@ import Header from "@/components/Estructura/Header";
 import { useMutation } from '@vue/apollo-composable';
 import { useQuery, useResult } from "@vue/apollo-composable";
 import marcasListQuery from "../../graphql/marca.query.gql";
-import add from "../../graphql/add.js";
+import { ref } from "vue";
 import gql from 'graphql-tag'
 
 export default {
@@ -64,63 +64,61 @@ export default {
     Header,
     Add,
   },
-  setup(){
-   
-    const { resultm } = useQuery(marcasListQuery);
+    setup(){
+        /* LISTADO DE MARCAS */
+        const message = ref("hola sergio");
+        const { result } = useQuery(marcasListQuery);
+        const marcasList = useResult(result, null, (data) => data.marcasList);
 
-    console.log(resultm);
-    const marcasList = useResult(resultm, null, (data) => data.marcasList);
-
-    return {  marcasList };
-
-   const zapato = {
-       id:"",
-       marca:"",
-       modelo:"",
-       marca:"",
-       publishedDate:"",
-       thumbnailUrl:"",
-       Precio:"",
-       longDescription:"",
-       tallas:"",
-   }
-   const {mutate: zapatoid} = useMutation(gql`
-        mutation AddZapato($zapato: ZapatoInput!) {
-            addZapato(Zapato: $zapato) {
-                data {
-                    ... on Zapato {
-                        id
-                        marca
-                        modelo
-                        publishedDate
-                        thumbnailUrl
-                        precio
-                        longDescription
-                        tallas
-                    }
-                }
-            }
-        }`,() => ({variables: {
-            zapato: {
-                id: id.value,
-                marca: marca.value,
-                modelo: modelo.value,
-                publishedDate: publishedDate.value,
-                thumbnailUrl: thumbnailUrl.value, 
-                precio: precio.value,
-                longDescription: longDescription.value,
-                tallas: tallas.value,
-            }
-        },
-        }))
-        console.log(zapato);
-        return {
-            zapato,
-            zapatoid
+        /* MUTACION DE INSERCCION DE UN ZAPATO */
+        const zapato = {
+            id:"",
+            marca:"",
+            modelo:"",
+            marca:"",
+            publishedDate:"",
+            thumbnailUrl:"",
+            Precio:"",
+            longDescription:"",
+            tallas:"",
         }
-}
-
-
+        const {mutate: zapatoid} = useMutation(gql`
+                mutation AddZapato($zapato: ZapatoInput!) {
+                    addZapato(Zapato: $zapato) {
+                        data {
+                            ... on Zapato {
+                                id
+                                marca
+                                modelo
+                                publishedDate
+                                thumbnailUrl
+                                precio
+                                longDescription
+                                tallas
+                            }
+                        }
+                    }
+                }`,() => ({variables: {
+                    zapato: {
+                        id: id.value,
+                        marca: marca.value,
+                        modelo: modelo.value,
+                        publishedDate: publishedDate.value,
+                        thumbnailUrl: thumbnailUrl.value, 
+                        precio: precio.value,
+                        longDescription: longDescription.value,
+                        tallas: tallas.value,
+                    }
+                },
+                }))
+                console.log(zapato, marcasList);
+                return {
+                    zapato,
+                    zapatoid,
+                    message,
+                    marcasList
+                }
+    },
 };
 </script>
 

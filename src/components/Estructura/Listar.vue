@@ -16,58 +16,10 @@
           <div>
             <h5>Marca</h5>
           </div>
-          <div class="form-check">
+          <div class="form-check" v-for="marcas in marcasList" :key="marcas.marca">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
-              Nike
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Adidas
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Reebook
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Puma
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              New Balance
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Vans
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Kappa
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Fila
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Joma
+              {{ marcas.marca }}
             </label>
           </div>
         </div>
@@ -97,8 +49,8 @@
 import Listar from "@/components/Estructura/Listar";
 import Header from "@/components/Estructura/Header";
 import { useQuery, useResult } from "@vue/apollo-composable";
-import { ref } from "vue";
 import zapatoListQuery from "../../graphql/zapato.query.gql";
+import marcasListQuery from "../../graphql/marca.query.gql";
 
 export default {
   name: "Listar",
@@ -107,13 +59,12 @@ export default {
     Listar,
   },
   setup() {
-    const message = ref("hola sergio");
-    const { result } = useQuery(zapatoListQuery);
 
-    // console.log(result)
-    const zapatoList = useResult(result, null, (data) => data.zapatoList);
-
-    return { message, zapatoList };
-  },
+        const { result } = useQuery(zapatoListQuery, marcasListQuery);
+        const zapatoList = useResult(result, null, (data) => data.zapatoList);
+        const marcasList = useResult(result, null, (data) => data.marcasList);
+        console.log(result);
+        return { zapatoList, marcasList };
+  }
 };
 </script>

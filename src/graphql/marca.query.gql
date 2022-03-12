@@ -1,4 +1,4 @@
-query marcasList {
+query MarcasList {
   marcasList {
     id
     marca
