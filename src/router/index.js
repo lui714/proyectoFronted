@@ -6,6 +6,7 @@ import Detalles from '../components/Estructura/Detalles.vue'
 import Update from '../components/Estructura/Update.vue'
 import Login from '../components/Estructura/Login.vue'
 import Add from '../components/Estructura/Add.vue'
+import ShowMarca from '../components/Estructura/ShowMarca.vue'
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
     path: '/Listar/Detalles/:id',
     name: 'Detalles',
     component: Detalles,
+    props: true,
+  },
+  {
+    path: '/ShowMarca/:id',
+    name: 'ShowMarca',
+    component: ShowMarca,
     props: true,
   },
   {

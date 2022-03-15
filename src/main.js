@@ -9,7 +9,7 @@ import 'bootstrap';
 import './assets/app.css';
 
 const defaultClient = new ApolloClient({
-    uri: 'http://localhost:3029/graphql',  // esto es URI DE SERVER GRAPHQL !!!!!
+    uri: 'http://localhost:3028/graphql',  // esto es URI DE SERVER GRAPHQL !!!!!
     cache: new InMemoryCache()
   })
   

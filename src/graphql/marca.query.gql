@@ -1,6 +1,6 @@
-query MarcasList {
+query MarcaList {
   marcasList {
-    id
+    idm
     marca
   }
 }
