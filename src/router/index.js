@@ -41,7 +41,7 @@ const routes = [
     props: true,
   },
   {
-    path: '/ShowMarca/:id',
+    path: '/ShowMarca/:idm',
     name: 'ShowMarca',
     component: ShowMarca,
     props: true,

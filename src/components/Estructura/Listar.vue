@@ -37,7 +37,9 @@
             v-for="marcas in marcasList"
             :key="marcas.marca"
           >
-            <router-link :to="{ name: 'ShowMarca', params: { id: marcas.id } }">
+            <router-link
+              :to="{ name: 'ShowMarca', params: { idm: marcas.idm } }"
+            >
               <input
                 class="form-check-input"
                 type="radio"
